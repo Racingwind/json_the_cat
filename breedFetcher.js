@@ -6,7 +6,8 @@ request(url, (error, response, body) => {
   if (error) {
     throw err;
   }
+
   console.log("Page fetch status: ", response && response.statusCode);
-  console.log(typeof body);
-  console.log(body);
+  const data = JSON.parse(body);
+  console.log(data[0].description);
 });
