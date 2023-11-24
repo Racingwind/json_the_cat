@@ -7,8 +7,11 @@ request(url, (error, response, body) => {
   if (error) {
     throw err;
   }
-
   console.log("Page fetch status: ", response && response.statusCode);
+  if (body === "[]") {
+    console.log("Cat breed not found");
+    return;
+  }
   const data = JSON.parse(body);
   console.log(data[0].description);
 });
