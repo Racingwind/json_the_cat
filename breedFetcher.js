@@ -1,11 +1,11 @@
 const request = require('request');
 
 const input = process.argv.slice(2);
-const url = `https://api.thecatapi.com/v1/breeds/search?q=${input}`;
+const url = `https://api.thecatapii.com/v1/breeds/search?q=${input}`;
 
 request(url, (error, response, body) => {
   if (error) {
-    throw err;
+    throw error;
   }
   console.log("Page fetch status: ", response && response.statusCode);
   if (body === "[]") {
